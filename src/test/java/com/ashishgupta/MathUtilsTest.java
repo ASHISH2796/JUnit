@@ -16,7 +16,7 @@ class MathUtilsTest {
 	void testUsingAssertMethod() {
 		MathUtils obj = new MathUtils();
 		int actual=obj.add(1, 2);
-		assertEquals(2, actual,"This method will add 2 number");
+		assertEquals(3, actual,"This method will add 2 number");
 	}
 	
 	@Test
