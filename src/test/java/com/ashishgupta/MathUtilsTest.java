@@ -16,7 +16,13 @@ class MathUtilsTest {
 	void testUsingAssertMethod() {
 		MathUtils obj = new MathUtils();
 		int actual=obj.add(1, 2);
-		assertEquals(3, actual);
+		assertEquals(2, actual,"This method will add 2 number");
+	}
+	
+	@Test
+	void testComputedAreaofCircle() {
+		MathUtils obj = new MathUtils();
+		assertEquals(314.1592653589793, obj.areaOfCircle(10),"This method will compute area of circle.");
 	}
 
 }
