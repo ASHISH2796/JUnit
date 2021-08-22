@@ -11,5 +11,12 @@ class MathUtilsTest {
 		//fail("Not yet implemented");
 		System.out.println("This test ran.");
 	}
+	
+	@Test
+	void testUsingAssertMethod() {
+		MathUtils obj = new MathUtils();
+		int actual=obj.add(1, 2);
+		assertEquals(3, actual);
+	}
 
 }
