@@ -25,4 +25,9 @@ class MathUtilsTest {
 		assertEquals(314.1592653589793, obj.areaOfCircle(10),"This method will compute area of circle.");
 	}
 
+	@Test
+	void testAssertThrow() {
+		MathUtils obj = new MathUtils();
+		assertThrows(ArithmeticException.class,()->{obj.divide(1, 0);} ,"Divide by zero");
+	}
 }
