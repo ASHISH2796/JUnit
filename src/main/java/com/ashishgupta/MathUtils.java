@@ -13,4 +13,8 @@ public class MathUtils {
 	public double divide(int a, int b) {
 		return a/b ;
 	}
+	
+	public double mulitply(int a, int b) {
+		return a*b;
+	}
 }

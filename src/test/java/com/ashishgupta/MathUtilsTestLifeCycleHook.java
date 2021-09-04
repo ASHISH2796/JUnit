@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -50,4 +51,19 @@ class MathUtilsTestLifeCycleHook {
 		assertThrows(ArithmeticException.class,()->{obj.divide(1, 0);} ,"Divide by zero");
 	}
 
+	
+	/**
+	 * will execute multiple test case for multiple method using assertAll method 
+	 * it will make sure if any assert statement failed it will still execute remaining statement from the list
+	 */
+	@Test
+	@DisplayName("This method will test multiple test case for multiple method")
+	void testMultiply() {
+		assertAll(
+				()->assertEquals(10,obj.mulitply(2, 0),"This method will multiple 2 with 0"), //will failed
+				()->assertEquals(10,obj.mulitply(2, 5),"This method will multiple 2 with 5"),
+				()->assertEquals(0,obj.mulitply(0, 10),"This method will multiple 0 with 10"),
+				()->assertEquals(30,obj.mulitply(2, -15),"This method will multiple 2 with -15") //will failed
+				);
+	}
 }
