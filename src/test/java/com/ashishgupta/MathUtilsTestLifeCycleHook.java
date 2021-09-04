@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -65,5 +66,21 @@ class MathUtilsTestLifeCycleHook {
 				()->assertEquals(0,obj.mulitply(0, 10),"This method will multiple 0 with 10"),
 				()->assertEquals(30,obj.mulitply(2, -15),"This method will multiple 2 with -15") //will failed
 				);
+	}
+	
+	@Nested
+	@DisplayName("to Add two number")
+	class AddTestCase {
+		@Test
+		@DisplayName("postive number")
+		void addPositive() {
+			assertEquals(3, obj.add(1, 2),"This method will add 2 positive  number");
+		}
+		
+		@Test
+		@DisplayName("negative number")
+		void addNegative() {
+			assertEquals(-3, obj.add(-1, -2),"This method will add 2 negative  number");
+		}
 	}
 }
